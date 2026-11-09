@@ -35,7 +35,7 @@ Each GIF costs 1 credit on your AI GIF Maker account, the same as on the website
 use std::time::Duration;
 
 let mut client = aigifmaker::Client::new("sk-...");   // or Client::from_env()
-client.timeout = Duration::from_secs(600);           // default: 5 minutes, polling every 3 seconds
+client.timeout = Duration::from_secs(600);           // default: 15 minutes, polling every 3 seconds
 
 let left = client.credits()?;                         // free to call
 let id = client.submit("a rocket launching, retro cartoon")?;

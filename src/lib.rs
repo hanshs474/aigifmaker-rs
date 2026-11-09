@@ -16,7 +16,7 @@
 //! ```
 //!
 //! [`generate`] submits the prompt, polls every 3 seconds until the GIF is ready
-//! (5 minutes at most) and returns its URL.
+//! (15 minutes at most) and returns its URL.
 //!
 //! # A client of your own
 //!
@@ -146,7 +146,7 @@ pub struct Client {
     base: String,
     /// Time between status checks. Default 3 seconds.
     pub poll_every: Duration,
-    /// Total wait for one GIF. Default 5 minutes.
+    /// Total wait for one GIF. Default 15 minutes.
     pub timeout: Duration,
 }
 
@@ -166,7 +166,7 @@ impl Client {
     /// A client for the given API key (`sk-...`). An empty key sends no
     /// `Authorization` header, and the service answers with [`Error::Auth`].
     pub fn new(api_key: impl Into<String>) -> Self {
-        Client { key: api_key.into().trim().to_string(), base: BASE_URL.into(), poll_every: Duration::from_secs(3), timeout: Duration::from_secs(300) }
+        Client { key: api_key.into().trim().to_string(), base: BASE_URL.into(), poll_every: Duration::from_secs(3), timeout: Duration::from_secs(900) }
     }
 
     /// A client reading its key from `AIGIFMAKER_API_KEY`.

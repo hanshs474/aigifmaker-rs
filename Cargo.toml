@@ -1,6 +1,6 @@
 [package]
 name = "aigifmaker"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 rust-version = "1.70"
 description = "Official SDK for AI GIF Maker (aigifmaker.ai): turn text into animated GIFs."
